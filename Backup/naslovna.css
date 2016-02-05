@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+
+
+.meni {
+	cellspacing : 0;
+	border-color : green;
+	background-color: #CCD8D9;
+	border-spacing : 1;
+	width: 75%;
+	cellpadding : 0;
+
+	
+	
+}
+
+.centered {
+	text-align: center;
+	margin: auto;
+	align : center;
+}
+
+.kl_ponuda {
+	text-align: center;
+	margin: auto;
+	align : left;
+}
+
+

@@ -1,0 +1,33 @@
+@CHARSET "ISO-8859-1";
+
+
+.liga {
+  background-color: #03B2B5; 
+  font-weight:bold;
+  text-transform:uppercase;
+  text-align: left;
+
+}
+
+.mec {
+	
+	border: 1px solid black; 
+}
+
+.kladze {
+	background-color: #EEEE05;
+	border: 5px solid black; 
+}
+
+
+.table {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #CCD8D9;
+    width: 75%;
+    color : blue;
+    text-align: center;
+    
+    border: 5px solid black;
+}
+
