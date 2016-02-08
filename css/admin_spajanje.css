@@ -16,9 +16,12 @@ table,tr, td{
 .naslov {
 	font-size: 22px;
 	background-color: #E1E10A;
-
 }
 
+
+.naslov td {
+	height: 30px;
+}
 
 
 .podnaslov {
