@@ -84,6 +84,26 @@ $conn = null;
 
 
 <body>
+	<table>
+	<thead>
+		<tr class="naslov">
+			<td colspan="2">Spojili ste takmičenja kladionice <?php echo $bookie?></td>
+		</tr>
+		<tr class="naslov">
+			<td><?php echo $bookie?></td>
+			<td>Mozzart</td>
+		</tr>
+	</thead>
+	<tbody>
+	<?php
+		foreach ($data as $d1) { ?>
+		<tr class="row<?php echo($i++ & 1 )?>">
+			<td><?php echo $d1['src_name']?></td>
+			<td><?php echo $d1['mozz_name']?></td>
+		</tr>
+		<?php  }?>
+	</tbody>	
+	</table>
 
 
 </body>
