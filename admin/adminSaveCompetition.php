@@ -8,14 +8,14 @@
 </head>
 
 <?php
-
+$i=1;
 $data = array();
 $indexes = array();
 $bookie = $_POST['source'];
 
-echo $_POST['source'];
+// echo $_POST['source'];
 
-echo $bookie;
+// echo $bookie;
 // fetch data
 $_post = $_POST;
 if(!empty($_post['src_comp'])) {
@@ -50,34 +50,34 @@ foreach($indexes as $index) {
 }
 
 
-print_r($data);
+// print_r($data);
 
-// include '../conn/conPDO124.php';
+include '../conn/conPDO124.php';
 
-// foreach ($data as $d) {
+foreach ($data as $d) {
 
-// 	$competitionId =$d['mozz_comp'];
-// 	$srcCompetitionId = $d['src_comp'];
-
-
-
-// 	$query = '
-// INSERT INTO
-// conn_competition (init_competition_id, src_competition_id)
-// VALUES
-// (:init_competition_id, :src_competition_id)
-// ';
-
-// 	$params = array(
-// 			'init_competition_id' => $competitionId,
-// 			'src_competition_id' => $srcCompetitionId
-// 	);
-
-// 	$prepare = $conn->prepare($query);
-// 	$prepare->execute($params);
+	$competitionId =$d['mozz_comp'];
+	$srcCompetitionId = $d['src_comp'];
 
 
-// }
+
+	$query = '
+INSERT INTO
+conn_competition (init_competition_id, src_competition_id)
+VALUES
+(:init_competition_id, :src_competition_id)
+';
+
+	$params = array(
+			'init_competition_id' => $competitionId,
+			'src_competition_id' => $srcCompetitionId
+	);
+
+	$prepare = $conn->prepare($query);
+	$prepare->execute($params);
+
+
+}
 $conn = null;
 
 ?>

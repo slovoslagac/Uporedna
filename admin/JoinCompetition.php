@@ -10,14 +10,16 @@
 $i=1;
 $Data1= array();
 $Data2= array();
-$source_id = 3;
-$source = 'Balkanbet';
-
+$source_id = 2;
+$bookie = 'Soccer';
+$bookies = array('Soccer', 'Balkanbet');
 
 if (isset ( $_GET ["bookie_id"] ) != "") {
 	$source_id = $_GET ["bookie_id"];
-}
+	$bookie = $bookies[$source_id - 2];
 
+}
+// echo $bookie;
 
 include '../query/adminSelectNonMatchCompetition.php';
 $Data1=$resultNMCMP;
@@ -46,20 +48,23 @@ $Data2=$resultMZCMP;
 				</td>
 			</form>
 			</tr> 
-
-
+			<tr class="naslov">
+				<td colspan="2">Nespojena takmičenja kladionice <?php echo $bookie?></td>
+			</tr>
 			<form method="post" action="adminSaveCompetition.php">
+
+			<input type="hidden" name="source" value="<?php echo $bookie ?>">
+			
 			<?php
 			foreach ($Data1 as $srSource) {
 
-				if ($source != $srSource['src_name']) {
-					$source = $srSource['src_name']; $source_id = $srSource['src_id']?>
+				if ($bookie != $srSource['src_name']) {
+					$source = $srSource['src_name']; $source_id = $srSource['src_id']; echo $source?>
 
-					<input type="hidden" name="source" value="<?php echo $srSource['src_name'] ?>">
+					
 
-					<tr class="naslov">
-						<td colspan="2">Nespojena takmičenja kladionice <?php echo $source?></td>
-					</tr>
+
+
 
 
 					<?php } $liga =  $srSource['cmp_name']; $liga_id = $srSource['cmp_id']?>
